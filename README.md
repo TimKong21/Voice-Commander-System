@@ -21,7 +21,7 @@ to produce a simple switch closure signal that manipulates the door opening swit
 For more detailed description. Please refer to [architectural design.pdf](https://github.com/TimKong21/Voice-Commender-/blob/main/architectural%20design.pdf)
 
 ## Prototype Demonstration Video
-- [Video link](https://drive.google.com/file/d/1QsACpmsZaHdh_5sRg77VsmnFVi18u1zP/view?usp=sharing)
+- [Video link](https://drive.google.com/file/d/1tcGMGNsbIss2OgflCIQ7D20ynAcGIDy3/view?usp=sharing)
 ## Acknowledgements
  - BMET instructors for technical guidance and advice
  - Client for inputs and encouragement
