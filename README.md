@@ -1,31 +1,44 @@
-# Voice Commander 
-This is a year 2020 BMET graduation project from course: [BMET 4402 Biomedical Engineering Technology Project](https://www.bcit.ca/outlines/20201011965/).
-The project was made for a quadriplegic client who needed a customized and portable voice commander to 
-interact with his/her door openning switch wirelessly. Corresponding work was split evenly between
-three members and only software related document is presented in this repository.
+# V-Map Voice Command System
 
-## Project Description
-The central technology used for wireless communication is the radio frequency which mainly served the purpose of low power consumption.
-An RF transmitter-receiver module was built along with a voice recognition module and a processing module. 
+The V-Map is a voice command system developed to help quadriplegic individuals interact with their environment through simple voice commands. This system translates spoken commands into radio frequency (RF) signals to control various devices wirelessly, such as automatic door openers.
 
-The modules combined as a whole system called the ***"V-Map"***. 
-Below shows a summary of the functions of the front-end modules:
+<p align="center">
+    <img src="README_assests/Intro_image.png" alt=" Intro image" style="width: 80%"/>
+</p>
 
-- The [voice recognition module](https://github.com/TimKong21/Voice-Commender-/tree/main/reference%20documents/voice%20recognition%20module) learns and recognizes the pre-trained commands
-- The [processing module](https://github.com/TimKong21/Voice-Commender-/tree/main/reference%20documents/arduino%20interface) decodes message from the voice recognition module and transmits signal to the transmitter module
-- The [transmitter module](https://github.com/TimKong21/Voice-Commender-/tree/main/reference%20documents/transmitter%20module) consists of an encoder and a transmitter. The address defined by the processing module will be converted into serial data and transmitted to the receiver module.
+## System Components
 
-On the other end, a [receiver module](https://github.com/TimKong21/Voice-Commender-/tree/main/reference%20documents/receiver%20module) with matching address was built to control a solid-state relay 
-to produce a simple switch closure signal that manipulates the door opening switch wirelessly
+- **Voice Recognition Module:** Utilizes EasyVR for reliable voice command recognition.
+- **Processing Module:** Employs Arduino Duemilanove to decode voice inputs and manage signal processing.
+- **Transmitter Module:**
+  - **Encoder:** HT12E encoder for signal encoding.
+  - **Transmitter:** TWS-BS handles the wireless transmission of the encoded signal.
+- **Receiver Module:**
+  - **Receiver:** RWS-371 receives the transmitted signal.
+  - **Decoder:** HT12D decodes the received signal.
+  - **Solid-State Relay:** JWD-107-5, controlled by the decoded signals to activate the door switch.
  
-For more detailed description. Please refer to [architectural design.pdf](https://github.com/TimKong21/Voice-Commender-/blob/main/architectural%20design.pdf)
+For detailed component specifications, please refer to the corresponding datasheets in the `component datasheets` folder.   
 
-## Prototype Demonstration Video
-- [Video link](https://drive.google.com/file/d/1lbnJuV_TK72wu2umAgaJuwPUvwt3Io0S/view?usp=sharing)
+## Features
+
+- **Wireless Communication:** Enables remote control of devices without physical wiring.
+- **Designed for Accessibility:** Provides ease of use for individuals with mobility challenges.
+- **Modular Setup:** Allows for customization to suit different applications and needs.
+- **Low Power Consumption:** Optimized for minimal energy use while maintaining efficient functionality.
+
+## Setup and Installation
+
+1. Assemble the modules following the instructions in the `schematics` folder.
+2. Upload the provided code to the Arduino board from the `source_code` folder.
+3. Train the EasyVR module with the necessary commands as detailed in **section 3.1 - Training a command** of the `Architectural Design.pdf` document.
+
+## Usage
+
+Operate the V-Map by speaking predefined commands to activate the connected devices. For example, saying "Open door" triggers the door opener mechanism. More examples and detailed command usage can be found in **section 3.2 - Trained commands and corresponding bits** of the `Architectural Design.pdf` document.
+
+Watch the [Prototype Demonstration Video](https://drive.google.com/file/d/1lbnJuV_TK72wu2umAgaJuwPUvwt3Io0S/view?usp=sharing) to see the V-Map in action.
 
 ## Acknowledgements
- - BMET instructors for technical guidance and advice
- - Client for inputs and encouragement
- - BMET alumni for reference documentation of past year projects
- - BMET class of 2020 for supports and share of ideas
-  
+
+This project was part of the [BMET 4402 Biomedical Engineering Technology Project](https://www.bcit.ca/outlines/20201011965/) course and was completed as a 2020 graduation project. Special thanks to BMET instructors for guidance, our client for inspiration, and BMET class of 2020 for support.
